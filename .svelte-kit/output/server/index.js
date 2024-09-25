@@ -3334,7 +3334,7 @@ async function respond(request, options2, manifest, state) {
     fetch: null,
     getClientAddress: state.getClientAddress || (() => {
       throw new Error(
-        `${"@sveltejs/adapter-auto"} does not specify getClientAddress. Please raise an issue`
+        `${"deno-deploy-adapter"} does not specify getClientAddress. Please raise an issue`
       );
     }),
     locals: {},
