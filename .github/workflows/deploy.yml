@@ -39,4 +39,4 @@ jobs:
         with:
           project: "smltr-coffee-store"
           entrypoint: ""
-          root: "/"
+          root: ""
