@@ -29,7 +29,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "deno upgrade -rc && deno run install"
+        run: "deno upgrade rc && deno run install"
 
       - name: Build step
         run: "deno run build"
