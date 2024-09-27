@@ -1,4 +1,4 @@
-import { f as slot } from "../../chunks/index.js";
+import { h as slot } from "../../chunks/index.js";
 function default_slot($$props) {
   var children = $$props.$$slots?.default;
   if (children === true) {
@@ -8,18 +8,19 @@ function default_slot($$props) {
   }
 }
 function Nav($$payload) {
-  $$payload.out += `<nav class="bg-white shadow-md"><div class="container mx-auto px-4"><div class="flex justify-between items-center py-4"><a href="/" class="text-2xl font-bold text-green-700">18 SERIES</a> <button class="md:hidden" aria-label="Toggle menu"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button> <div class="hidden md:flex space-x-4"><a href="/" class="text-gray-800 hover:text-green-700">Home</a> <a href="/shop" class="text-gray-800 hover:text-green-700">Shop</a> <a href="/about" class="text-gray-800 hover:text-green-700">About</a> <a href="/contact" class="text-gray-800 hover:text-green-700">Contact</a></div></div> `;
-  {
-    $$payload.out += "<!--[!-->";
-  }
-  $$payload.out += `<!--]--></div></nav>`;
+  $$payload.out += `<div class="navbar bg-base-200"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-ghost lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div> <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"><li><a>Item 1</a></li> <li><a>Parent</a> <ul class="p-2"><li><a>Submenu 1</a></li> <li><a>Submenu 2</a></li></ul></li> <li><a>Item 3</a></li></ul></div> <a href="/" class="btn btn-ghost text-2xl"><img src="images/horse.webp" alt="Horse" class="h-9 w-9 mr-2"> 18 Series Coffee</a></div> <div class="navbar-center hidden lg:flex"><ul class="menu menu-horizontal px-1"><li><a>Home</a></li> <li><a>About</a></li></ul></div> <div class="navbar-end"><a class="btn">Order Coffee</a></div></div>`;
+}
+function Footer($$payload) {
+  $$payload.out += `<footer class="footer bg-base-200 text-base-content p-10"><aside><img src="images/horse.webp" alt="Horse logo" width="50" height="50" class="fill-current invert brightness-0"> <p class="mt-2">© 2024 18 Series Coffee Company <br> A 501(c)3 Charitable Organization</p></aside> <nav><h6 class="footer-title">Shop</h6> <a class="link link-hover">Coffee</a> <a class="link link-hover">Merch</a></nav> <nav><h6 class="footer-title">Links</h6> <a class="link link-hover">Our Story</a> <a class="link link-hover">Donate</a> <a class="link link-hover">My Account</a></nav></footer>`;
 }
 function _layout($$payload, $$props) {
-  $$payload.out += `<div class="min-h-screen flex flex-col bg-gray-50">`;
+  $$payload.out += `<div class="font-body">`;
   Nav($$payload);
-  $$payload.out += `<!----> <main class="flex-grow container mx-auto px-4 py-8"><!---->`;
+  $$payload.out += `<!----> <!---->`;
   slot($$payload, default_slot($$props), {});
-  $$payload.out += `<!----></main> <footer class="bg-gray-800 text-white py-6"><div class="container mx-auto text-center text-sm"><p>© 2023 18 SERIES COFFEE COMPANY | Supporting Green Berets</p></div></footer></div>`;
+  $$payload.out += `<!----> `;
+  Footer($$payload);
+  $$payload.out += `<!----></div>`;
 }
 export {
   _layout as default

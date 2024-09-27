@@ -1,4 +1,4 @@
-import { H as HYDRATION_ERROR, g as get_descriptor, d as define_property, i as is_array, a as HYDRATION_START, b as HYDRATION_END, c as array_from, r as render, p as push$1, s as setContext, e as pop$1 } from "./index.js";
+import { H as HYDRATION_ERROR, g as get_descriptor, d as define_property, i as is_array, a as HYDRATION_START, b as HYDRATION_END, c as array_from, e as is_passive_event, r as render, p as push$1, s as setContext, f as pop$1 } from "./index.js";
 const DEV = false;
 let base = "";
 let assets = base;
@@ -896,10 +896,6 @@ function assign_nodes(start, end) {
     effect2.nodes_end = end;
   }
 }
-const PASSIVE_EVENTS = ["touchstart", "touchmove"];
-function is_passive_event(name) {
-  return PASSIVE_EVENTS.includes(name);
-}
 function mount(component, options2) {
   return _mount(component, options2);
 }
@@ -1223,7 +1219,7 @@ const options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n    <head>\n        <meta charset="utf-8" />\n        <link rel="icon" href="' + assets2 + '/favicon.png" />\n        <link\n            href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Roboto+Mono&display=swap"\n            rel="stylesheet"\n        />\n        <meta name="viewport" content="width=device-width, initial-scale=1" />\n        ' + head + '\n    </head>\n    <body data-sveltekit-preload-data="hover">\n        <div style="display: contents">' + body + "</div>\n    </body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -1295,7 +1291,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "ecmjjn"
+  version_hash: "136xfw2"
 };
 async function get_hooks() {
   return {};

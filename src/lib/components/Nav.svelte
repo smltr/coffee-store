@@ -1,55 +1,49 @@
-<script>
-    let isMenuOpen = $state(false);
-
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-    }
-</script>
-
-<nav class="bg-white shadow-md">
-    <div class="container mx-auto px-4">
-        <div class="flex justify-between items-center py-4">
-            <a href="/" class="text-2xl font-bold text-green-700">18 SERIES</a>
-
-            <!-- Mobile menu button -->
-            <button class="md:hidden" onclick={toggleMenu} aria-label="Toggle menu">
+<div class="navbar bg-base-200">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
                 <svg
-                    class="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
                 >
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
-                        d="M4 6h16M4 12h16m-7 6h7"
-                    ></path>
+                        d="M4 6h16M4 12h8m-8 6h16"
+                    />
                 </svg>
-            </button>
-
-            <!-- Desktop menu -->
-            <div class="hidden md:flex space-x-4">
-                <a href="/" class="text-gray-800 hover:text-green-700">Home</a>
-                <a href="/shop" class="text-gray-800 hover:text-green-700">Shop</a>
-                <a href="/about" class="text-gray-800 hover:text-green-700">About</a>
-                <a href="/contact" class="text-gray-800 hover:text-green-700">Contact</a>
             </div>
+            <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+                <li><a>Item 1</a></li>
+                <li>
+                    <a>Parent</a>
+                    <ul class="p-2">
+                        <li><a>Submenu 1</a></li>
+                        <li><a>Submenu 2</a></li>
+                    </ul>
+                </li>
+                <li><a>Item 3</a></li>
+            </ul>
         </div>
-
-        <!-- Mobile menu -->
-        {#if isMenuOpen}
-            <div class="md:hidden">
-                <a href="/" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-                <a href="/shop" class="block py-2 px-4 text-sm hover:bg-gray-200">Shop</a>
-                <a href="/about" class="block py-2 px-4 text-sm hover:bg-gray-200"
-                    >About</a
-                >
-                <a href="/contact" class="block py-2 px-4 text-sm hover:bg-gray-200"
-                    >Contact</a
-                >
-            </div>
-        {/if}
+        <a href="/" class="btn btn-ghost text-2xl">
+            <img src="images/horse.webp" alt="Horse" class="h-9 w-9 mr-2" />
+            18 Series Coffee
+        </a>
     </div>
-</nav>
+    <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+        </ul>
+    </div>
+    <div class="navbar-end">
+        <a class="btn">Order Coffee</a>
+    </div>
+</div>
