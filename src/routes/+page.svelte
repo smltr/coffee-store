@@ -7,11 +7,11 @@
 </script>
 
 <Hero />
-<div class="bg-gray-200 text-primary py-20">
+<div id="shop" class="bg-gray-200 text-primary py-20">
     <div class="container mx-auto max-w-2xl px-4 text-center mb-10">
-        <h1 class="text-5xl font-bold mb-5 text-gray-200">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-5 text-gray-200">
             <ChevronDoubleDown class="inline-block text-primary mb-1 w-9 h-9" />
-            <span class="text-primary tracking-tighter">Shop Our Blends </span>
+            <span class="text-primary uppercase tracking-tighter">Shop Our Blends </span>
             <ChevronDoubleDown class="inline-block text-primary mb-1 w-9 h-9" />
         </h1>
         <p class="font-body">
@@ -51,9 +51,9 @@
         <Star class="w-6 h-6 text-yellow-400" />
     </div>
 </div>
-<div class="bg-accent text-primary py-20">
+<div id="story" class="bg-accent text-primary py-20">
     <div class="container mx-auto max-w-2xl px-4 text-center mb-10">
-        <h1 class="text-5xl font-bold mb-5 text-gray-200">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-5 text-gray-200">
             <ChevronDoubleDown class="inline-block text-primary mb-1 w-9 h-9" />
             <span class="text-primary uppercase tracking-tighter">Our Story </span>
             <ChevronDoubleDown class="inline-block text-primary mb-1 w-9 h-9" />
@@ -71,10 +71,11 @@
                 <div class="text-center">
                     <div class="avatar mb-4">
                         <div
-                            class="ring-primary ring-offset-base-100 w-48 rounded-full ring ring-offset-2"
+                            class="ring-primary ring-offset-base-100 w-32 sm:w-48 rounded-full ring ring-offset-2"
                         >
                             <img
                                 src="https://18seriescoffeecompany.org/wp-content/uploads/2023/11/SEperry1991_auto_x2.jpg"
+                                alt="Perry Blackburn portrait"
                             />
                         </div>
                     </div>
@@ -85,6 +86,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-primary hover:text-primary-focus transition-colors duration-300"
+                        aria-label="Perry Blackburn's LinkedIn profile"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -101,11 +103,12 @@
                 <div class="text-center">
                     <div class="avatar mb-4">
                         <div
-                            class="ring-primary ring-offset-base-100 w-48 rounded-full ring ring-offset-2"
+                            class="ring-primary ring-offset-base-100 w-32 sm:w-48 rounded-full ring ring-offset-2"
                         >
                             <img
                                 src="https://18seriescoffeecompany.org/wp-content/uploads/2023/12/SR-25.jpg"
                                 class="object-cover object-[50%_20%] w-full h-full scale-150"
+                                alt="Chuck Pense portrait"
                             />
                         </div>
                     </div>
@@ -117,6 +120,7 @@
                         target="_blank"
                         rel="noopener noreferrer"
                         class="text-primary hover:text-primary-focus transition-colors duration-300"
+                        aria-label="Chuck Pense's LinkedIn profile"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,28 @@
 <script lang="ts">
     import { Star } from "svelte-heros";
+
+    function smoothScroll(node: HTMLElement) {
+        const handleClick = (event: MouseEvent) => {
+            event.preventDefault();
+            const href = node.getAttribute("href");
+            if (href) {
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                    });
+                }
+            }
+        };
+
+        node.addEventListener("click", handleClick);
+
+        return {
+            destroy() {
+                node.removeEventListener("click", handleClick);
+            },
+        };
+    }
 </script>
 
 <div
@@ -9,17 +32,23 @@
     <div class="custom-hero-overlay"></div>
     <div class="hero-content text-center">
         <div class="max-w-2xl mx-auto">
-            <h2 class="mb-5 text-md font-bold text-secondary font-body text-gray-200">
+            <h2 class="mb-5 text-md font-bold font-body text-secondary">
                 18 SERIES COFFEE COMPANY
             </h2>
-            <h1 class="mb-5 text-6xl font-bold font-body text-gray-200 tracking-tight">
+            <h1
+                class="mb-5 text-5xl sm:text-6xl font-bold font-body text-gray-200 tracking-tight"
+            >
                 Buy Coffee, Support A Veteran
             </h1>
             <p class="mb-5 text-lg max-w-lg mx-auto">
                 At 18 Series Coffee, we use a portion of every sale to help veterans in
-                need.
+                need.Our mission is to make a difference in veterans' lives. <a
+                    use:smoothScroll
+                    href="#story"
+                    class="text-secondary hover:underline">Read our story</a
+                >.
             </p>
-            <button class="btn btn-secondary">Shop Now</button>
+            <a href="#shop" use:smoothScroll class="btn btn-secondary">Shop Now</a>
         </div>
     </div>
 </div>
