@@ -42,7 +42,7 @@
             </h1>
             <p class="mb-5 text-lg max-w-lg mx-auto">
                 At 18 Series Coffee, we use a portion of every sale to help veterans in
-                need.Our mission is to make a difference in veterans' lives. <a
+                need. Our mission is to make a difference in veterans' lives. <a
                     use:smoothScroll
                     href="#story"
                     class="text-secondary hover:underline">Read our story</a
